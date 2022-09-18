@@ -61,7 +61,7 @@ int main(int argc, char **argv)
   /**
    * ros::spin() will enter a loop, calling message callbacks as fast as possible.  
    * If there's nothing for it to do it won't use much CPU. 
-   * ros::spin() will exit once ros::ok() returns flase, which means ros::shutdown() has been called, either by the default Ctrl-C handler, the master telling us to shutdown or it being called manually.
+   * ros::spin() will exit once ros::ok() returns false, which means ros::shutdown() has been called, either by the default Ctrl-C handler, the master telling us to shutdown or it being called manually.
    * With this version, all callbacks will be called from within this thread (the main one).  
    * ros::spin() will exit when Ctrl-C is pressed, or the node is shutdown by the master.
    */
