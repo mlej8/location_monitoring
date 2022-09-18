@@ -109,15 +109,17 @@ int main(int argc, char **argv)
     chatter_pub.publish(msg);
 
     /**
-     * If you were to add a subscription into this application, and did not have ros::spinOnce() here, your callbacks would never get called.
+     * If you were to add a subscription into this application, and did not have ros::spinOnce() here, your callbacks 
+     * would never get called. Calling ros::spinOnce() here is not necessary for this simple program, because we are 
+     * not receiving any callbacks. However, if you were to add a subscription into this application, and did not have 
+     * ros::spinOnce() here, your callbacks would never get called. So, add it for good measure.
+     * https://wiki.ros.org/roscpp/Overview/Callbacks%20and%20Spinning
+     * https://answers.ros.org/question/11887/significance-of-rosspinonce/
     */
     ros::spinOnce();
 
     /**
      * Use the ros::Rate object to sleep for the time remaining to let us hit our 10Hz publish rate
-     * Calling ros::spinOnce() here is not necessary for this simple program, because we are not receiving any 
-     * callbacks. However, if you were to add a subscription into this application, and did not have ros::spinOnce() 
-     * here, your callbacks would never get called. So, add it for good measure.
     */
     loop_rate.sleep();
 
